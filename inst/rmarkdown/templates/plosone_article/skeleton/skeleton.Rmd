@@ -1,0 +1,118 @@
+---
+title: Short Paper
+author:
+  - name: Alice Anonymous
+    email: alice@example.com
+    affiliation: Some Institute of Technology
+    footnote: Corresponding Author
+  - name: Bob Security
+    email: bob@example.com
+    affiliation: Another University
+address:
+  - code: Some Institute of Technology
+    address: Department, Street, City, State, Zip
+  - code: Another University
+    address: Department, Street, City, State, Zip
+abstract: |
+  This is the abstract.
+
+  It consists of two paragraphs. rticles::plos_article
+
+bibliography: mybibfile.bib
+output: pdf_document
+---
+
+_Text based on PLOS sample manuscript, see [http://journals.plos.org/plosone/s/latex](http://journals.plos.org/plosone/s/latex)_
+
+
+Submitting a LaTeX manuscript? Follow these guidelines to make sure it is properly formatted for the PLOS system.
+
+Guidelines for all manuscripts are listed in the author instructions. [Read the instructions.](http://journals.plos.org/plosone/s/submission-guidelines)
+
+Need assistance? Email latex@plos.org.
+
+
+PLOS Template
+=============
+
+For your convenience, PLOS provides a template for LaTeX submissions.
+Download the template.
+
+Use this template to help format your article for our production process.
+You can add packages to this template but please do not remove any that are already included.
+
+The zip also contains the `plos2015.bst` BibTeX style sheet.
+Use this file to specify the formatting of your BibTeX file as it will ensure that your references are generated in the correct format.
+If your submission does not follow the template format, your manuscript may be sent back to you for corrections.
+
+## LaTeX Version
+
+You are required to use LaTeX2e. [Download the latest version.](http://www.latex-project.org/)
+
+
+## How to Submit
+
+For your initial submission, upload the PDF as your manuscript file, containing your manuscript text, figure legends, tables, and references.
+Do not include figures in your PDF; they should be uploaded as separate files.
+
+If your submission is accepted, you will be asked to upload your LaTeX source file.
+If your manuscript .tex is separated into several `.tex` files, combine these into a single, cohesive `.tex` file before submission.
+Make sure to update your PDF file with the most recent version of your manuscript.
+
+As stated in the PLOS template, your reference information should be included in your `.tex` file (not submitted separately as `.bib` or `.bbl`).
+
+## Formatting Tips
+
+* Use the [PLOS template.](http://journals.plos.org/plosone/s/file?id=SyJ3/plos-latex-template.zip)
+* Do not track changes in your final tex file. PLOS recommends the use of latexdiff to track changes in the manuscript PDF during review, as this will help to maintain a clean tex file. Download [latexdiff.](https://www.ctan.org/pkg/latexdiff?lang=en)
+* Your manuscript source file should not call on external files (do not use `\input` or `\externaldocument`).
+* Include all portions of equations within the math environment in order to ensure it is correctly rendered. 
+* For the author byline, use the formatting and symbols included in the template.
+* Use Unicode characters instead of LaTeX commands when possible (e.g., type `é` instead of `\'{e}`).
+* Follow the instructions in the template regarding the placement of table and figure legends.
+* Follow the instructions in the template for proper formatting of supporting information legends and citations.
+* Elements that exceed the width of the text column must be included in an “adjustwidth” environment to display properly. [See the template for more information.](http://journals.plos.org/plosone/s/file?id=SyJ3/plos-latex-template.zip)
+
+## Figures
+
+Do not include figures in the manuscript PDF.
+Submit figures as separate TIFF or EPS files.
+Figures with multiple panels (subfigures) should be uploaded as a single file.
+Do not upload each panel/subfigure separately.
+
+PLOS does not accept vector EPS figures generated in LaTeX. 
+PLOS accepts only TIFFs or EPS created in standard software, such as Adobe Illustrator, InkScape, PyMol, MatLab, or SAS.
+
+### Convert LaTeX-generated EPS figures to TIFF:
+
+1. Compile the LaTeX files as PDF.
+1. Open PDF in Photoshop, GIMP, or another graphics software that enables TIFF.
+1. Crop out the figure and export as TIFF.
+
+    For more information about figures, [read the figure guidelines.](http://journals.plos.org/plosone/s/figures)
+
+## Equations
+
+### Display equations
+
+* Include entire equation in one math environment.
+* Include terminal punctuation within the math environment.
+* Add line breaks in long equations (so that they will fit our column width).
+
+### In-line equations
+
+* If any part of the equation or phrase includes a character only available in math mode, then include the entire equation/phrase in one math environment. 
+
+    Please refrain from using math mode for non-math content, such as chemical formulas.
+    For example, please use `CO\textsubscript{2}` instead of `$\mathrm{CO}^2$`
+
+* Do not include commas or other normal (text) punctuation in the math environment, if possible.
+
+## Tables
+
+* Tables must be cell based.
+* We cannot accept vertically merged cells in tables. Certain LaTeX table formatting techniques, such as using `\multirow` or containing a tabular environment within another tabular environment, will result in vertically merged cells and should therefore be avoided.
+* Tables cannot contain graphics or colors.
+* Do not use `\hline` for new lines within a cell. This will result in data being split between two different shaded rows. Instead, allow text to wrap within a cell.
+
+    For more information about tables,  read the table guidelines. 

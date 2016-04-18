@@ -1,0 +1,5 @@
+name: PLoS Article
+description: >
+ Template for creating an article for submission to any Public Library of Science (PLoS) journal
+create_dir: true
+
