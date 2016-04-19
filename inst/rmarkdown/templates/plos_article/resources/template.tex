@@ -85,7 +85,7 @@
 \usepackage{textcomp,marvosym}
 
 % fixltx2e package for \textsubscript
-% \usepackage{fixltx2e}
+\usepackage{fixltx2e}
 
 % amsmath and amssymb packages, useful for mathematical formulas and symbols
 \usepackage{amsmath,amssymb}
@@ -117,6 +117,10 @@
 % Captions will be left justified
 \usepackage[aboveskip=1pt,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=off]{caption}
 \renewcommand{\figurename}{Fig}
+
+% Added for rmarkdown / pandoc compatibility
+\usepackage{longtable}
+\usepackage{booktabs}
 
 % Use the PLoS provided BiBTeX style
 \bibliographystyle{plos2015}
@@ -159,29 +163,36 @@
 {\Large
 \textbf\newline{$title$} % Please use "title case" (capitalize all terms in the title except conjunctions, prepositions, and articles).
 }
-\newline
-% Insert author names, affiliations and corresponding author email (do not include titles, positions, or degrees).
 \\
+\bigskip
+
+% Insert author names, affiliations and corresponding author email (do not include titles, positions, or degrees).
 $for(author)$
-  $if(author.name)$
-    $author.name$\textsuperscript{$for(author.affiliation)$$author.affiliation$$sep$,$endfor$$if(author.equalcontrib)$\Yinyang$endif$$if(author.corresponding)$*$endif$}
-  $else$
-    with the $author.consortium$\textsuperscript{\textpilcrow}
-  $endif$$sep$,
+$if(author.name)$$author.name$\textsuperscript{$author.affiliation$$if(author.equalcontrib)$\Yinyang$endif$$if(author.corresponding)$*$endif$}$else$with the $author.consortium$\textsuperscript{\textpilcrow}$endif$$sep$,
 $endfor$
 \\
 \bigskip
 $for(affiliation)$
-  \textbf{$affiliation.count$} $affiliation.department$, $affiliation.name$, $affiliation.address$\\
+\textbf{$affiliation.id$} $affiliation.department$, $affiliation.name$, $affiliation.address$
+\\
 $endfor$
 \bigskip
+
 % Insert additional author notes using the symbols described below. Insert symbol callouts after author names as necessary.
 % Primary Equal Contribution Note
-$if(equalcontrib)$\Yinyang These authors contributed equally to this work.\\$endif$
+$if(equalcontrib)$\Yinyang These authors contributed equally to this work.
+\\
+$endif$
+
 % Group/Consortium Author Note
-$if(consortium)$\textpilcrow Membership list can be found in the Acknowledgments section.\\$endif$
+$if(consortium)$\textpilcrow Membership list can be found in the Acknowledgments section.
+\\
+$endif$
+
 % Use the asterisk to denote corresponding authorship and provide email address in note below.
-$if(corresponding)$* $corresponding$\\$endif$
+$if(corresponding)$* $corresponding$
+\\
+$endif$
 
 
 \end{flushleft}
@@ -203,35 +214,6 @@ $endif$
 \linenumbers
 
 $body$
-
-% Use "Eq" instead of "Equation" for equation citations.
-\section*{Introduction}
-Lorem ipsum dolor sit~\cite{bib1} amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam Eq~(\ref{eq:schemeP}) sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id.~\cite{bib2} Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
-
-\begin{eqnarray}
-\label{eq:schemeP}
-	\mathrm{P_Y} = \underbrace{H(Y_n) - H(Y_n|\mathbf{V}^{Y}_{n})}_{S_Y} + \underbrace{H(Y_n|\mathbf{V}^{Y}_{n})- H(Y_n|\mathbf{V}^{X,Y}_{n})}_{T_{X\rightarrow Y}},
-\end{eqnarray}
-
-\section*{Materials and Methods}
-\subsection*{Etiam eget sapien nibh.}
-
-% For figure citations, please use "Fig" instead of "Figure".
-Nulla mi mi, Fig~\ref{fig1} venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, \nameref{S1_Video} vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
-
-% Place figure captions after the first paragraph in which they are cited.
-\begin{figure}[!h]
-\caption{{\bf Bold the figure title.}
-Figure Caption Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. A: Lorem ipsum dolor sit amet. B: Consectetur adipiscing elit.}
-\label{fig1}
-\end{figure}
-
-% Results and Discussion can be combined.
-\section*{Results}
-Nulla mi mi, venenatis sed ipsum varius, Table~\ref{table1} volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
-
-% Place tables after the first paragraph in which they are cited.
-% TABLE WAS HERE
 
 
 %PLOS does not support heading levels beyond the 3rd (no 4th level headings).

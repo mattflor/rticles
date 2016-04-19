@@ -4,23 +4,16 @@
 title: Title of Submission to PLOS Journals
 author:
   - name: Name1 Surname
-    affiliation:
-      - 1
-      - 2
+    affiliation: '1,2'
     equalcontrib: true
   - name: Name2 Surname
-    affiliation: 2
+    affiliation: '2'
     equalcontrib: true
   - name: Name3 Surname
-    affiliation:
-      - 2
-      - 3
+    affiliation: '2,3'
   - name: Name4 Surname
     corresponding: true
-    affiliation:
-      - 1
-      - 2
-      - 3
+    affiliation: '1,2,3'
   - consortium: Lorem Ipsum Consortium
 # Email adress of corresponding author
 corresponding: correspondingauthor@institute.edu
@@ -29,15 +22,15 @@ equalcontrib: true
 # set consortium: false if there is no consortium involved
 consortium: true
 affiliation:
-  - count: 1
+  - id: 1
     name: Institution Name
     department: Affiliation Dept/Program/Center
     address: City, State, Country
-  - count: 2
+  - id: 2
     name: Institution Name
     department: Affiliation Dept/Program/Center
     address: City, State, Country
-  - count: 3
+  - id: 3
     name: Institution Name
     department: Affiliation Dept/Program/Center
     address: City, State, Country
@@ -53,15 +46,102 @@ authorsummary: |
   Nunc pellentesque pretium diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
 
 bibliography: mybibfile.bib
-output: rticles::plos_article
+output:
+  rticles::plos_article
 ---
 
-<!-- Text based on PLOS sample manuscript, see [http://journals.plos.org/plosone/s/latex](http://journals.plos.org/plosone/s/latex)
+Text based on PLOS sample manuscript and the LaTeX guidelines at [http://journals.plos.org/plosone/s/latex](http://journals.plos.org/plosone/s/latex)
+
+You may remove the comment markers to include these in the PDF.
 
 Guidelines for all manuscripts are listed in the author instructions. [Read the instructions.](http://journals.plos.org/plosone/s/submission-guidelines)
 
 Need assistance? Email latex@plos.org.
--->
+
+# FIGURES AND TABLES {-}
+
+Please include tables/figure captions directly after the paragraph where they are first cited in the text.
+
+DO NOT INCLUDE GRAPHICS IN YOUR MANUSCRIPT
+
+- Figures should be uploaded separately from your manuscript file.
+- Figures generated using LaTeX should be extracted and removed from the PDF before submission.
+- Figures containing multiple panels/subfigures must be combined into one image file before submission.
+
+For figure citations, please use "Fig" instead of "Figure".
+See [http://journals.plos.org/plosone/s/figures](http://journals.plos.org/plosone/s/figures) for PLOS figure guidelines.
+
+Tables should be cell-based and may not contain:
+
+- tabs/spacing/line breaks within cells to alter layout or alignment
+- vertically-merged cells (no tabular environments within tabular environments, do not use `\multirow`)
+- colors, shading, or graphic objects
+
+See [http://journals.plos.org/plosone/s/tables](http://journals.plos.org/plosone/s/tables) for table guidelines.
+
+# Introduction {-}
+
+Lorem ipsum dolor sit [@Dirac1953888] amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam Eq (\ref{eq:schemeP}) sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id.~[@Feynman1963118] Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
+
+\begin{eqnarray}
+\label{eq:schemeP}
+	\mathrm{P_Y} = \underbrace{H(Y_n) - H(Y_n|\mathbf{V}^{Y}_{n})}_{S_Y} + \underbrace{H(Y_n|\mathbf{V}^{Y}_{n})- H(Y_n|\mathbf{V}^{X,Y}_{n})}_{T_{X\rightarrow Y}},
+\end{eqnarray}
+
+# Materials and Methods{-}
+
+## Figures {-}
+
+<!-- For figure citations, please use "Fig" instead of "Figure". -->
+Do not include figures in the manuscript PDF.
+Submit figures as separate TIFF or EPS files.
+Figures with multiple panels (subfigures) should be uploaded as a single file.
+Do not upload each panel/subfigure separately.
+
+PLOS does not accept vector EPS figures generated in \LaTeX. 
+PLOS accepts only TIFFs or EPS created in standard software, such as Adobe Illustrator, InkScape, PyMol, MatLab, or SAS.
+
+<!-- Place figure captions after the first paragraph in which they are cited. -->
+\begin{figure}[!h]
+\caption{{\bf Bold the figure title.}
+Figure Caption Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. A: Lorem ipsum dolor sit amet. B: Consectetur adipiscing elit.}
+\label{fig1}
+\end{figure}
+
+### Convert LaTeX-generated EPS figures to TIFF: {-}
+
+1. Compile the LaTeX files as PDF.
+1. Open PDF in Photoshop, GIMP, or another graphics software that enables TIFF.
+1. Crop out the figure and export as TIFF.
+
+    For more information about figures, [read the figure guidelines.](http://journals.plos.org/plosone/s/figures)
+
+## Tables {-}
+
+* Tables must be cell based.
+
+* PLOS does not accept vertically merged cells in tables. Certain LaTeX table formatting techniques, such as using `\multirow` or containing a tabular environment within another tabular environment, will result in vertically merged cells and should therefore be avoided.
+
+* Tables cannot contain graphics or colors.
+
+* Do not use `\hline` for new lines within a cell. This will result in data being split between two different shaded rows. Instead, allow text to wrap within a cell.
+
+
+    For more information about tables, [read the table guidelines.](http://journals.plos.org/plosone/s/tables)
+
+
+<!-- Results and Discussion can be combined. -->
+# Results {-}
+
+Nulla mi mi, venenatis sed ipsum varius, Table (table1) volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
+
+| **Heading 1** | **Heading 2** | Heading 3     |
+|:--------------|:--------------|:--------------|
+| cell1 row1    |  cell2 row 1  | cell3 row 1   |
+| cell1 row2    |  cell2 row 2  | cell3 row 2   |
+| cell1 row3    |  cell2 row 3  | cell3 row 3   |
+
+: Table caption Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam.
 
 
 # PLOS Template
@@ -112,23 +192,6 @@ As stated in the PLOS template, your reference information should be included in
 
 * Elements that exceed the width of the text column must be included in an “adjustwidth” environment to display properly. [See the template for more information.](http://journals.plos.org/plosone/s/file?id=SyJ3/plos-latex-template.zip)
 
-## Figures
-
-Do not include figures in the manuscript PDF.
-Submit figures as separate TIFF or EPS files.
-Figures with multiple panels (subfigures) should be uploaded as a single file.
-Do not upload each panel/subfigure separately.
-
-PLOS does not accept vector EPS figures generated in LaTeX. 
-PLOS accepts only TIFFs or EPS created in standard software, such as Adobe Illustrator, InkScape, PyMol, MatLab, or SAS.
-
-### Convert LaTeX-generated EPS figures to TIFF:
-
-1. Compile the LaTeX files as PDF.
-1. Open PDF in Photoshop, GIMP, or another graphics software that enables TIFF.
-1. Crop out the figure and export as TIFF.
-
-    For more information about figures, [read the figure guidelines.](http://journals.plos.org/plosone/s/figures)
 
 ## Equations
 
@@ -149,16 +212,3 @@ PLOS accepts only TIFFs or EPS created in standard software, such as Adobe Illus
     For example, please use `CO\textsubscript{2}` instead of `$\mathrm{CO}^2$`
 
 * Do not include commas or other normal (text) punctuation in the math environment, if possible.
-
-## Tables
-
-* Tables must be cell based.
-
-* We cannot accept vertically merged cells in tables. Certain LaTeX table formatting techniques, such as using `\multirow` or containing a tabular environment within another tabular environment, will result in vertically merged cells and should therefore be avoided.
-
-* Tables cannot contain graphics or colors.
-
-* Do not use `\hline` for new lines within a cell. This will result in data being split between two different shaded rows. Instead, allow text to wrap within a cell.
-
-
-    For more information about tables,  read the table guidelines. 
