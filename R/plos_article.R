@@ -19,11 +19,9 @@
 #' @export
 plos_article <- function(...,
                          keep_tex = TRUE,
-                         number_sections = FALSE,
                          md_extensions = c("-autolink_bare_uris")) {
   inherit_pdf_document(...,
                        template = find_resource("plos_article", "template.tex"),
                        keep_tex = keep_tex,
-                       number_sections = number_sections,
                        md_extensions = md_extensions)
 }
