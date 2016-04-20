@@ -20,8 +20,14 @@
 plos_article <- function(...,
                          keep_tex = TRUE,
                          md_extensions = c("-autolink_bare_uris")) {
-  inherit_pdf_document(...,
-                       template = find_resource("plos_article", "template.tex"),
-                       keep_tex = keep_tex,
-                       md_extensions = md_extensions)
+#   inherit_pdf_document(...,
+#                        template = find_resource("plos_article", "template.tex"),
+#                        keep_tex = keep_tex,
+#                        md_extensions = md_extensions)
+  pdf_document_format(...,
+                      keep_tex = keep_tex,
+                      md_extensions = md_extensions,
+                      format = "plos_article",
+                      template = "template.tex",
+                      csl = "plos.csl")
 }
