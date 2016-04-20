@@ -46,7 +46,9 @@ authorsummary: |
   Nunc pellentesque pretium diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
 
 bibliography: mybibfile.bib
-output: rticles::plos_article
+output:
+  rticles::plos_article:
+    citation_package: biblatex
 ---
 
 <!-- This R Markdown template is based on the PLOS LaTeX template available from the PLOS website. Please refer to the PLOS guidelines on submitting LaTeX manuscripts for further instructions, e.g. http://journals.plos.org/plosone/s/latex 
@@ -57,7 +59,7 @@ Comments such as this are taken from the original LaTeX template, the guidelines
 
 <!-- Use "Eq" instead of "Equation" for equation citations. -->
 <!-- Rmd note: Use LaTeX `\label{}` and `\ref{}` commands. -->
-Lorem ipsum dolor sit \ref{Conant2008} amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam Eq (\ref{eq:schemeP}) sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id. \ref{Feynman1963} Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
+Lorem ipsum dolor sit \cite{Conant2008} amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam Eq (\ref{eq:schemeP}) sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id. \cite{Feynman1963} Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
 
 \begin{eqnarray}
 \label{eq:schemeP}
@@ -71,7 +73,7 @@ Lorem ipsum dolor sit \ref{Conant2008} amet, consectetur adipiscing elit. Curabi
 
 <!-- For figure citations, please use "Fig" instead of "Figure". -->
 <!-- Rmd note: Use LaTeX `\label{}` and `\ref{}` commands. -->
-Nulla mi mi, Fig \ref{fig1} venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, \nameref{S1_Video} vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
+Nulla mi mi, Fig \ref{fig1} venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, \nameref{s1-video.} vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
 
 <!-- Place figure captions after the first paragraph in which they are cited.
 Figures themselves must not be included in the PDF! 
@@ -90,14 +92,15 @@ Nulla mi mi, venenatis sed ipsum varius, Table \ref{table1} volutpat euismod dia
 
 <!-- Place tables after the first paragraph in which they are cited.
 For more information about tables, read the table guidelines, http://journals.plos.org/plosone/s/tables --> 
+<!-- Rmd note: Use bold table caption. -->
 
-| **Heading 1** | **Heading 2** | **Heading 3** |
-|:--------------|:--------------|:--------------|
-| cell1 row1    |  cell2 row 1  | cell3 row 1   |
-| cell1 row2    |  cell2 row 2  | cell3 row 2   |
-| cell1 row3    |  cell2 row 3  | cell3 row 3   |
+| **Heading 1** | **Heading 2** | **Heading 3** | **Heading 4** | **Heading 5** | **Heading 6** |
+|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+| cell1 row1    |  cell2 row 1  | cell3 row 1   | cell4 row1    |  cell5 row 1  | cell6 row 1   |
+| cell1 row2    |  cell2 row 2  | cell3 row 2   | cell4 row2    |  cell5 row 2  | cell6 row 2   |
+| cell1 row3    |  cell2 row 3  | cell3 row 3   | cell4 row3    |  cell5 row 3  | cell6 row 3   |
 
-: Table caption Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam.
+: **Table caption Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam.**\label{table1}
 
 
 <!-- PLOS does not support heading levels beyond the 3rd (no 4th level headings). -->
@@ -134,46 +137,38 @@ Nulla mi mi, venenatis sed ipsum varius, Table \ref{table1} volutpat euismod dia
 
 # Conclusion {-}
 
-CO\textsubscript{2} Maecenas convallis mauris sit amet sem ultrices gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus consectetur pellentesque. Quisque augue sem, tincidunt sit amet feugiat eget, ullamcorper sed velit. 
+CO~2~ Maecenas convallis mauris sit amet sem ultrices gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus consectetur pellentesque. Quisque augue sem, tincidunt sit amet feugiat eget, ullamcorper sed velit. 
 
-Sed non aliquet felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris commodo justo ac dui pretium imperdiet. Sed suscipit iaculis mi at feugiat. Ut neque ipsum, luctus id lacus ut, laoreet scelerisque urna. Phasellus venenatis, tortor nec vestibulum mattis, massa tortor interdum felis, nec pellentesque metus tortor nec nisl. Ut ornare mauris tellus, vel dapibus arcu suscipit sed. Nam condimentum sem eget mollis euismod. Nullam dui urna, gravida venenatis dui et, tincidunt sodales ex. Nunc est dui, sodales sed mauris nec, auctor sagittis leo. Aliquam tincidunt, ex in facilisis elementum, libero lectus luctus est, non vulputate nisl augue at dolor. For more information, see \nameref{S1_Appendix}.
+Sed non aliquet felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris commodo justo ac dui pretium imperdiet. Sed suscipit iaculis mi at feugiat. Ut neque ipsum, luctus id lacus ut, laoreet scelerisque urna. Phasellus venenatis, tortor nec vestibulum mattis, massa tortor interdum felis, nec pellentesque metus tortor nec nisl. Ut ornare mauris tellus, vel dapibus arcu suscipit sed. Nam condimentum sem eget mollis euismod. Nullam dui urna, gravida venenatis dui et, tincidunt sodales ex. Nunc est dui, sodales sed mauris nec, auctor sagittis leo. Aliquam tincidunt, ex in facilisis elementum, libero lectus luctus est, non vulputate nisl augue at dolor. For more information, see \nameref{s1-appendix.}.
 
 
 # Supporting Information {-}
 
 <!-- Include only the SI item label in the paragraph heading. Use the `\nameref{label}` command to cite SI items in the text. -->
-\paragraph*{S1 Fig.}
-\label{S1_Fig}
+<!-- Rmd note: Level 4 sections (####) are paragraphs, and the label to use is automatically created from the paragraph header by making the header lower case and replacing whitespace with minus characters. E.g. '#### S1 Fig.' can be referenced by `\nameref{s1-fig.}`-->
+#### S1 Fig. {-}
 **Bold the title sentence.** Add descriptive text after the title of the item (optional).
 
-\paragraph*{S2 Fig.}
-\label{S2_Fig}
+#### S2 Fig. {-}
 **Lorem Ipsum.** Maecenas convallis mauris sit amet sem ultrices gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus consectetur pellentesque.
 
-\paragraph*{S1 File.}
-\label{S1_File}
+#### S1 File. {-}
 **Lorem Ipsum.** Maecenas convallis mauris sit amet sem ultrices gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus consectetur pellentesque.
 
-\paragraph*{S1 Video.}
-\label{S1_Video}
+#### S1 Video. {-}
 **Lorem Ipsum.** Maecenas convallis mauris sit amet sem ultrices gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus consectetur pellentesque.
 
-\paragraph*{S1 Appendix.}
-\label{S1_Appendix}
+#### S1 Appendix. {-}
 **Lorem Ipsum.** Maecenas convallis mauris sit amet sem ultrices gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus consectetur pellentesque.
 
-\paragraph*{S1 Table.}
-\label{S1_Table}
+#### S1 Table. {-}
 **Lorem Ipsum.** Maecenas convallis mauris sit amet sem ultrices gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus consectetur pellentesque.
 
 
 # Acknowledgments {-}
 Cras egestas velit mauris, eu mollis turpis pellentesque sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam id pretium nisi. Sed ac quam id nisi malesuada congue. Sed interdum aliquet augue, at pellentesque quam rhoncus vitae.
 
-<!-- Do not remove this command. -->
-\nolinenumbers
-
-
-# References {-}
-
-
+```{r, echo = FALSE, message = FALSE}
+library(knitcitations)
+write.bibtex(file = "mybibfile.bib")
+```
