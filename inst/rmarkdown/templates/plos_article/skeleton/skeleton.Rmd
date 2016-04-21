@@ -1,65 +1,77 @@
 ---
 # Title must be 250 characters or less.
 # Please use "title case" (capitalize all terms in the title except conjunctions, prepositions, and articles).
-title: Title of Submission to PLOS Journals
+title: 'Title of Submission to PLOS Journals'
 author:
-  - name: Name1 Surname
+  - name: 'Name1 Surname'
     affiliation: '1,2'
     equalcontrib: true
-  - name: Name2 Surname
+  - name: 'Name2 Surname'
     affiliation: '2'
     equalcontrib: true
-  - name: Name3 Surname
+  - name: 'Name3 Surname'
     affiliation: '2,3'
-  - name: Name4 Surname
+  - name: 'Name4 Surname'
     corresponding: true
     affiliation: '1,2,3'
-  - consortium: Lorem Ipsum Consortium
+  - consortium: 'Lorem Ipsum Consortium'
 # Email adress of corresponding author (don't forget to set corresponding: true in the author list above for the corresponding author)
 corresponding: correspondingauthor@institute.edu
-# set equalcontrib: false if there are no equal contributions in your work
+# set equalcontrib: false if there are no equal contributions in your work (or remove the line altogether)
 equalcontrib: true
-# set consortium: false if there is no consortium involved
+# set consortium: false if there is no consortium involved (or remove the line altogether)
 consortium: true
 affiliation:
   - id: 1
-    name: Institution Name
-    department: Affiliation Dept/Program/Center
-    address: City, State, Country
+    name: 'Institution Name'
+    department: 'Affiliation Dept/Program/Center'
+    address: 'City, State, Country'
   - id: 2
-    name: Institution Name
-    department: Affiliation Dept/Program/Center
-    address: City, State, Country
+    name: 'Institution Name'
+    department: 'Affiliation Dept/Program/Center'
+    address: 'City, State, Country'
   - id: 3
-    name: Institution Name
-    department: Affiliation Dept/Program/Center
-    address: City, State, Country
-# Please keep the abstract below 300 words
-abstract: |
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
-
-# Please keep the Author Summary between 150 and 200 words
-# Use first person. PLOS ONE authors please skip this step.
-# Author Summary not valid for PLOS ONE submissions
-authorsummary: |
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. 
-  Nunc pellentesque pretium diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
-
-bibliography: mybibfile.bib
-output:
-  rticles::plos_article:
-    citation_package: biblatex
+    name: 'Institution Name'
+    department: 'Affiliation Dept/Program/Center'
+    address: 'City, State, Country'
+bibfilename: mybibfile
+output: rticles::plos_article
 ---
 
 <!-- This R Markdown template is based on the PLOS LaTeX template available from the PLOS website. Please refer to the PLOS guidelines on submitting LaTeX manuscripts for further instructions, e.g. http://journals.plos.org/plosone/s/latex 
 Comments such as this are taken from the original LaTeX template, the guidelines, or they address R Markdown specific issues (if introduced by 'Rmd note') -->
 
+<!-- Don't remove this command -->
+\nolinenumbers
+
+<!-- Please keep the abstract below 300 words -->
+# Abstract {-}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
+
+
+<!-- Please keep the Author Summary between 150 and 200 words
+Use first person. PLOS ONE authors please skip this step.
+Author Summary not valid for PLOS ONE submissions -->
+# Author Summary {-}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
+
+<!-- Don't remove this command -->
+\linenumbers
+
 <!-- Rmd note: Use the {-} attribute after the section heading to suppress numbering. -->
 # Introduction {-}
 
 <!-- Use "Eq" instead of "Equation" for equation citations. -->
-<!-- Rmd note: Use LaTeX `\label{}` and `\ref{}` commands. -->
-Lorem ipsum dolor sit \cite{Conant2008} amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam Eq (\ref{eq:schemeP}) sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id. \cite{Feynman1963} Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
+<!-- Rmd note: Use LaTeX `\label{}` and `\ref{}` commands for equations, figures, and tables. -->
+<!-- Rmd note: Use LaTeX `\cite{id}` command for citations. To properly insert citations and the bibliography, run the following on the tex file creating by knitting:
+pdflatex <filename>.tex
+bibtex <filename>
+pdflatex <filename>.tex
+pdflatex <filename>.tex
+-->
+Lorem ipsum dolor sit \cite{bib1} amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam Eq (\ref{eq:schemeP}) sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id. \cite{bib2} Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
 
 \begin{eqnarray}
 \label{eq:schemeP}
@@ -168,7 +180,4 @@ Sed non aliquet felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 # Acknowledgments {-}
 Cras egestas velit mauris, eu mollis turpis pellentesque sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam id pretium nisi. Sed ac quam id nisi malesuada congue. Sed interdum aliquet augue, at pellentesque quam rhoncus vitae.
 
-```{r, echo = FALSE, message = FALSE}
-library(knitcitations)
-write.bibtex(file = "mybibfile.bib")
-```
+
