@@ -2,17 +2,14 @@
 % Please edit documentation in R/plos_article.R
 \name{plos_article}
 \alias{plos_article}
-\title{Elsevier journal format.}
+\title{PLOS journal format.}
 \usage{
-plos_article(..., keep_tex = TRUE, number_sections = FALSE,
-  md_extensions = c("-autolink_bare_uris"))
+plos_article(..., keep_tex = TRUE, md_extensions = c("-autolink_bare_uris"))
 }
 \arguments{
 \item{...}{Additional arguments to \code{rmarkdown::pdf_document}}
 
 \item{keep_tex}{Keep the intermediate tex file used in the conversion to PDF}
-
-\item{number_sections}{\code{TRUE} to number section headings}
 
 \item{md_extensions}{Markdown extensions to be added or removed from the
 default definition or R Markdown. See the \code{\link{rmarkdown_format}} for
@@ -23,7 +20,7 @@ R Markdown output format to pass to
   \code{\link[rmarkdown:render]{render}}
 }
 \description{
-Format for creating submissions to Elsevier journals. Adapted from
+Format for creating submissions to PLOS journals. Adapted from
 \href{http://journals.plos.org/plosone/s/latex}{http://journals.plos.org/plosone/s/latex}.
 }
 \examples{
